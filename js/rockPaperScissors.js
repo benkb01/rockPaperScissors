@@ -1,11 +1,18 @@
 
 
-pChoice = prompt("Rock, paper, or scissors?");
-cChoice = getCompChoice();
+const rockButton = document.querySelector('#rock');
+rockButton.addEventListener('click', function(){tellOutcome("rock", getCompChoice()); });
 
-console.log("You chose " + pChoice + ". Computer chose " + cChoice + ". You " + getResult(pChoice, cChoice) + "!");
+const paperButton = document.querySelector('#paper');
+paperButton.addEventListener('click', function(){tellOutcome("paper", getCompChoice()); });
 
+const scissorsButton = document.querySelector('#scissors');
+scissorsButton.addEventListener('click', function(){tellOutcome("scissors", getCompChoice()); });
 
+function tellOutcome(pChoice, cChoice)
+    {
+    alert("You chose " + pChoice + ". Computer chose " + cChoice + ". You " + getResult(pChoice, cChoice) + "!");
+    }
 
 function isFormatted(choice)
     {
